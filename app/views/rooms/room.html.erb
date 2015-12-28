@@ -1,2 +1,11 @@
 Hey, <%= current_user  %>,
 welcome to <%= @room.name  %>
+
+<div id="messages-list">
+  <ul class="list-group" id="messages" data-room="<%= @room.name %>" data-user="<%= current_user  %>">
+  </ul>
+  <div>
+    <input id="message-input"/>
+    <button id="send-message">Send</button>
+  </div>
+</div>

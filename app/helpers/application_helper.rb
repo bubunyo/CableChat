@@ -1,10 +1,10 @@
 module ApplicationHelper
   def current_user
     @user = session[:username]
-    if @user.empty?
-      redirect_to root_path
+    if @user.nil?
+      ''
     else
-      return @user
+      @user
     end
   end
 end

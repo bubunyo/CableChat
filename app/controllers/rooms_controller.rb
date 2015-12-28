@@ -1,4 +1,6 @@
 class RoomsController < ApplicationController
+  before_action :user_name_set, except: [:new, :enter]
+
   def new
     @room = Room.new
   end
