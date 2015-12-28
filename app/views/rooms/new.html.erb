@@ -1,0 +1,10 @@
+<%= form_for lambda{ @room ||= Room.new }.call, url: {action: 'enter'} do |f|  %>
+
+  <%= label_tag :username %>
+  <%= text_field_tag :username %>
+
+  <%= f.label :name  %>
+  <%= f.text_field :name  %>
+  <br/>
+  <%= f.submit "Enter Room"  %>
+<% end  %>
