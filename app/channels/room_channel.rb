@@ -2,10 +2,18 @@
 class RoomChannel < ApplicationCable::Channel
   def subscribed
     stream_from room_name
+    @room.count += 1
+    @room.save
   end
 
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
+    @room.count -= 1
+    if @room.count < 1
+      @room.destroy
+    else
+      @room.save
+    end
   end
 
   def send_message(data)

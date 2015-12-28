@@ -1,5 +1,4 @@
 <%= form_for lambda{ @room ||= Room.new }.call, url: {action: 'enter'} do |f|  %>
-
   <%= label_tag :username %>
   <%= text_field_tag :username %>
 
@@ -8,3 +7,14 @@
   <br/>
   <%= f.submit "Enter Room"  %>
 <% end  %>
+
+<div>
+  <% if @rooms.any?  %>
+    <ul>
+      <%= render @rooms  %>
+    </ul>
+  <% else  %>
+    No Rooms yet
+  <% end  %>
+
+</div>

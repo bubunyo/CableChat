@@ -5,7 +5,7 @@ welcome to <%= @room.name  %>
   <ul class="list-group" id="messages" data-room="<%= @room.name %>" data-user="<%= current_user  %>">
   </ul>
   <div>
-    <input id="message-input"/>
+    <input id="message-input" data-behaviour="speaker"/>
     <button id="send-message">Send</button>
   </div>
 </div>

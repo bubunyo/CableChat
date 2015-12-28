@@ -2,6 +2,7 @@ class RoomsController < ApplicationController
   before_action :user_name_set, except: [:new, :enter]
 
   def new
+    @rooms = Room.all
     @room = Room.new
   end
 

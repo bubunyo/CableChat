@@ -9,7 +9,6 @@ $ ->
       @init()
 
     disconnected: ->
-      # window.location = "http://www.yoururl.com"
       # Called when the subscription has been terminated by the server
       console.log "disconnected from cable"
 
@@ -23,14 +22,15 @@ $ ->
 
     init: ->
       $(document).on 'keypress', '[data-behaviour=speaker]', (e) ->
-        if e.keyCode = 13 && j = !!e.target.value.trim
-          App.room.send_message user, e.target.value.trim
+        if e.keyCode is 13 && e.target.value.trim()
+          App.room.send_message user, e.target.value
           e.target.value = ''
           e.preventDefault()
       
       $('#send-message').on 'click', (e) ->
-        message = $('#message-input').val()
-        if m = !!message.trim
+        message = $('#message-input').val().trim()
+        if message
           App.room.send_message user, message
-          e.target.value = ''
+          $('#message-input').val ''
+          $('#message-input').focus()
           e.preventDefault()
