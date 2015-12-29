@@ -1,11 +1,18 @@
-Hey, <%= current_user  %>,
-welcome to <%= @room.name  %>
+<div class="panel panel-default full-height">
+	<div class="panel-heading">
+		Hey, <%= current_user  %>,	welcome to <%= @room.name  %>
+	</div>
+	<div class="panel-body full-height">
+		<div id="messages-list full-height">
+			<ul class="list-group" id="messages" data-room="<%= @room.name %>" data-user="<%= current_user  %>">
+			</ul>
 
-<div id="messages-list">
-  <ul class="list-group" id="messages" data-room="<%= @room.name %>" data-user="<%= current_user  %>">
-  </ul>
-  <div>
-    <input id="message-input" data-behaviour="speaker"/>
-    <button id="send-message">Send</button>
-  </div>
+		</div>
+	</div>
+
+	<div class="panel-footer chat-text-input">  
+			<input id="message-input" class="form-control" data-behaviour="speaker" placeholder="Type Message, Press Enter to Send"/>
+	</div>
 </div>
+</div>
+
