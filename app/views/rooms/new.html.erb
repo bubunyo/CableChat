@@ -1,20 +1,38 @@
-<%= form_for lambda{ @room ||= Room.new }.call, url: {action: 'enter'} do |f|  %>
-  <%= label_tag :username %>
-  <%= text_field_tag :username %>
+<div class="panel panel-default set-scroll">
+  <div class="panel-body">
+    <div>
+      <h3 class= "text-center"> ActionCable Chats</h3>
+    </div>
+    <%= form_for lambda{ @room ||= Room.new }.call, url: {action: 'enter'}, html: {class: 'form-horizontal'} do |f|  %>
+    <div class="form-group">
+      <%= label_tag :username, 'Username', class: 'col-sm-4 control-label' %>
+      <div class="col-sm-6">
+        <%= text_field_tag :username, nil, class: 'form-control', placeholder: 'Username' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :name, 'Chat Room', class: 'col-sm-4 control-label' %>
+      <div class="col-sm-6">
+        <%= f.text_field :name, class: 'form-control', placeholder:'Chat Room Name'  %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-4 col-sm-6">
+        <%= f.submit "Enter Room", class: 'btn btn-primary'  %>
+      </div>
+    </div>
+    <% end  %>
+    </div>
 
-  <%= f.label :name  %>
-  <%= f.text_field :name  %>
-  <br/>
-  <%= f.submit "Enter Room"  %>
-<% end  %>
-
-<div>
-  <% if @rooms.any?  %>
-    <ul>
-      <%= render @rooms  %>
-    </ul>
-  <% else  %>
-    No Rooms yet
-  <% end  %>
-
+    <div class="panel-footer full-height">
+    <h4 class= "text-center"> Available Chat Rooms</h4>
+        <% if @rooms.any?  %>
+        <ul class="list-group">
+          <%= render @rooms  %>
+        </ul>
+        <% else  %>
+        No Rooms yet
+        <% end  %>
+    
+  </div>
 </div>

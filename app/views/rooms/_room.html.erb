@@ -1,3 +1,4 @@
-<li>
-  <%= room.name  %> - <%= room.count  %> users inside
+<li class="list-group-item">
+  <a class="room-link" href="#"><span class="room-name"><%= room.name  %></span> - <span class="label label-<%= if room.count > 0 then 'primary' else 'danger' end %>"><%= room.count  %> users inside</span>
+  </a>
 </li>

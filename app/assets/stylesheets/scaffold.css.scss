@@ -1,0 +1,71 @@
+html {
+  position: relative;
+  min-height: 100%;
+  overflow: hidden;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+    margin-top: 40px;
+    overflow: hidden;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 100px;
+  background-color: #e4e4e4;
+  border-top-width: 2px;
+  border-top-color: #000;
+}
+.full-height {
+  height: 100%;
+}
+
+.page-bottom-padding {
+  padding-bottom: 110px;
+}
+
+footer .container {
+  padding: 20px;
+}
+
+.noscroll {
+  position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.container {
+  height: 100%;
+}
+
+.set-scroll {
+  overflow-y: auto;
+  height: 100%;
+}
+
+  /* Let's get this party started */
+::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: rgba(0,0,0,0.2); 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: rgba(0,0,0,0.2); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255,0,0,0.9); 
+}
