@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>CableChat</title>
-  <%= csrf_meta_tags %>
-  <%= action_cable_meta_tag %>
+  <head>
+    <title>CableChat</title>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-      </script>
-      <![endif]-->
-    </head>
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+    </script>
+    <![endif]-->
+  </head>
 
-    <body class="noscroll">
-      <div class="container">
-        <div class="row page-bottom-padding full-height"> 
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-0 full-height">
-            <% if flash.any?  %>
-            <% flash.each do |k, v|  %>
-            <div><%= v %></div>
-            <% end  %>
-            <% end  %>
-            <%= yield %>
-          </div>
+  <body class="noscroll">
+    <div class="container">
+      <div class="row page-bottom-padding full-height"> 
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-0 full-height">
+          <%= yield %>
         </div>
+        <% if flash.any?  %>
+          <% flash.each do |k, v|  %>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+              <div class="alert alert-warning alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong><%= k.humanize %></strong>: 
+                <%= v.humanize  %>
+              </div>
+            </div>
+          <% end  %>
+        <% end  %>
       </div>
-      <footer class="footer">
+    </div>
+    <footer class="footer">
       <div class="container">
-      <p class="tex-mutes pull-left">
-      Find me on <a href="https://github.com/orignMaster/CableChat">Github</a>
-      </p>
+        <p class="tex-mutes pull-left">
+          Find me on <a href="https://github.com/orignMaster/CableChat">Github</a>
+        </p>
         <p class="text-muted pull-right">2015. Made <i class="fa fa-heart pulse"></i>in GH. by <a href= "https://twitter.com/orignMaster">OrignMaster</a></p>
       </div>
     </footer>
-    </body>
-    
-    </html>
+  </body>
+
+</html>

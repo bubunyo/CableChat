@@ -26,6 +26,7 @@
 
     <div class="panel-footer full-height">
     <h4 class= "text-center"> Available Chat Rooms</h4>
+    <% @rooms = Room.all %>
         <% if @rooms.any?  %>
         <ul class="list-group">
           <%= render @rooms  %>

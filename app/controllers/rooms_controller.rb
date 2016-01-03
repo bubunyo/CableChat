@@ -2,7 +2,6 @@ class RoomsController < ApplicationController
   before_action :user_name_set, except: [:new, :enter]
 
   def new
-    @rooms = Room.all
     @room = Room.new
   end
 
@@ -14,7 +13,6 @@ class RoomsController < ApplicationController
       render 'new'
       return
     end
-
     room_name = params[:room][:name]
     if room_name.blank?
       flash.now[:alert] = "Please Supply room name"

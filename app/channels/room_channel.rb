@@ -2,6 +2,7 @@
 class RoomChannel < ApplicationCable::Channel
   def subscribed
     stream_from room_name
+    puts params
     @room.count += 1
     @room.save
   end
