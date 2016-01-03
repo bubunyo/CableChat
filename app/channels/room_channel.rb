@@ -17,8 +17,7 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def send_message(data)
-    # ActionCable.server.broadcast "channel_#{data[room]}", message: data[:message], user: data[:user]
-    ActionCable.server.broadcast "room_#{@room.name}", message: data['message'], user: data['user']
+    ActionCable.server.broadcast "room_#{@room.name}", message: data['message'], user: data['user'], hex: data['hex']
   end
 
   private

@@ -4,8 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   private
-  def set_user(username)
+  def set_user(username, hex_class)
     session[:username] = username
+    session[:hex] = hex_class
   end
 
   def user_name_set

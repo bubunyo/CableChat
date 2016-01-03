@@ -55,7 +55,11 @@ footer .container {
 }
 
 .chat-text-input {
-margin-top: -96px;
+  margin-top: -96px;
+}
+
+.bottom-padding {
+  padding-bottom: 98px;
 }
   /* Let's get this party started */
 
@@ -78,4 +82,38 @@ margin-top: -96px;
 }
 ::-webkit-scrollbar-thumb:window-inactive {
   background: rgba(255,0,0,0.9); 
+}
+
+
+/*chat bubbles*/
+
+.green-sea {
+    background-color: #16a085;
+}
+.nephritis {
+    background-color: #27ae60;
+}
+.belize-hole {
+    background-color: #3498db;
+}
+.wisteria {
+    background-color: #8e44ad;
+}
+.midnight-blue {
+    background-color: #2c3e50;
+}
+.orange {
+    background-color: #f39c12;
+}
+.pumpkin {
+    background-color: #d35400;
+}
+.pomegranate {
+    background-color: #c0392b;
+}
+.silver {
+    background-color: #bdc3c7;
+}
+.asbestos {
+    background-color: #7f8c8d;
 }

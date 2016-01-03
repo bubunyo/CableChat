@@ -8,7 +8,7 @@ class RoomsController < ApplicationController
 
   def enter
     if params[:username].present?
-      set_user(params[:username])
+      set_user(params[:username], get_hex )
     else
       flash.now[:alert] = "Invalid username"
       render 'new'
@@ -45,5 +45,22 @@ class RoomsController < ApplicationController
   end
 
   def leave
+  end
+
+  private
+  def get_hex
+    colors = [
+      "green-sea",
+      "nephritis",
+      "belize-hole",
+      "wisteria",
+      "midnight-blue",
+      "orange",
+      "pumpkin",
+      "pomegranate",
+      "silver",
+      "asbestos"
+    ]
+    return colors[rand(colors.size)]
   end
 end
