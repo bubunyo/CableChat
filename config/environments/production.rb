@@ -40,7 +40,7 @@ Rails.application.configure do
 
   # Action Cable endpoint configuration
    
-  config.middleware.use ActionCableWebsocket
+  # config.middleware.use ActionCableWebsocket
   config.action_cable.url = 'wss://action-cable.herokuapp.com/cable'
   config.action_cable.allowed_request_origins = [ 'https://action-cable.herokuapp.com', /http:\/\/action-cable.herokuapp.*/ ]
 
