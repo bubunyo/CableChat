@@ -7,3 +7,4 @@ development:
 
 test:
   url: redis://localhost:6379/3
+
